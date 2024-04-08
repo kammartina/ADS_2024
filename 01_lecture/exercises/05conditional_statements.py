@@ -11,7 +11,18 @@ Example:
     The number 17 is odd.
 """
 # Write your solution here
+#Solution 1:
+#num = int(input("Enter a number: "))
+#if num % 2 == 0:
+ #   print(f"The number {num} is even.")
+#else: num % 2 != 0
+#print(f"The number {num} is odd.")
 
+#Solution 2:
+#num = int(input("Enter a number: "))
+#if num % 2 == 0:
+ #   print(f"The number {num} is even.")
+#else: print(f"The number {num} is odd.")
 
 """
 Write a program that asks the user for their exam grade (as a percentage). 
@@ -27,7 +38,14 @@ Example:
     You passed the exam!
 """
 # Write your solution here
-
+#grade = float(input("Enter your exam grade (as a percentage): "))
+#"if" a "elif" urcuje vrchnu a spodnu hranicu?? vsetko medzi tym je "else"??
+#if grade < 50:
+ #   print("Unfortunately, you failed the exam.")
+#elif grade >= 90:
+ #   print("You are excellent!")
+#else:
+ #   print("You passed the exam!")
 
 """
 Write a program that simulates a simple lunch ordering system. 
@@ -49,3 +67,23 @@ Example:
     Your order: Salad with ranch dressing
 """
 # Write your solution here
+order_type = input("Would you like a sandwich, salad, or wrap? ")
+
+if order_type == "sandwich":
+    sandwich_type = input("Would you like a chicken, beef or veggie sandwich? ")
+    print(f"You have ordered {order_type} with {sandwich_type}. Enjoy your meal!")
+
+elif order_type == "salad":
+    dressing = input("What kind of dressing would you like: vinaigrette, ranch, or caesar? ")
+    print(f"You ordered {order_type} with {dressing} dressing. Enjoy your meal!")
+
+elif order_type == "wrap":
+    roasted = input("Would you like your wrap toasted? ")
+    if roasted == "yes":
+        print("You ordered a roasted wrap. Enjoy your meal!")
+    elif roasted == "no":
+        print("You ordered a wrap. Enjoy your meal!")
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'.")
+else:
+    print("Invalid choice. Please choose between sandwich, salad, or wrap.")

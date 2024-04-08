@@ -6,8 +6,9 @@ It may also be used to display a message to the user, to prompt for specific inp
 The following program reads in the name of the user with the input command.
 It then prints it out with the print command:
 """
-# name = input("What is your name? ")
-# print("Hi there, " + name)
+name = input("What is your name? ")
+#program runs the first line, waits for my response and than prints the next line
+print("Hi there, " + name)
 
 """
 Variables
@@ -20,10 +21,9 @@ This value can be used later, and it can also be changed.
 Referencing variables
 A single variable can be referred to many times in a program:
 """
-# name = input("What is your name? ")
-#
-# print("Hi, " + name + "!")
-# print(name + " is quite a nice name.")
+name = input("What is your name? ")
+print("Hi, " + name + "!")
+print(name + " is quite a nice name.")
 
 
 

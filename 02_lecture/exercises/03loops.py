@@ -14,6 +14,12 @@ Example:
     okay then
 """
 # Write your solution here
+#print("Hello world!")
+#while True:
+#  user_input = input("Shall we continue? ")
+#  if user_input == "no":
+#    print("Okay then, bye!")
+#    break
 
 """
 Write a program which asks the user for integer numbers.
@@ -41,20 +47,42 @@ Example:
     Exiting...
 """
 # Write your solution here
-
+#from math import sqrt
+#print(sqrt(9))
+#while True:
+#  number = int(input("Please type in a number: "))
+#  if number < 0:
+#    print("Invalid number!")
+#  elif number > 0:
+#    square_root = math.sqrt(number)
+#    print(f"The square root of {number} is {square_root}")
+#  else:
+#    break
 """
 This program should print out a countdown. However, the program doesn't quite work. Please fix it.
 Hint: you can use the debugger of PyCharm to see how the program is executing.
 """
 # Fix the code
-number = 5
-print("Countdown!")
-while True:
-  print(number)
-  number = number - 1
-  if number > 0:
-    break
+#number = 5
+#print("Countdown!")
+#while True:
+#  print(number)
+#  number = number - 1
+#  continue
+#  if number > 0:
+#    break
 
+#print("Now!")
+###
+
+print("Countdown!")
+# Initialize the number before the loop
+number = 5
+# Include 0 in the countdown
+while number >= 0:
+  print(number)
+  # Decrement the number by 1
+  number -= 1
 print("Now!")
 
 """
@@ -69,6 +97,9 @@ Examples:
     The next leap year after 2024 is 2028
 """
 # Write your solution here
+year = int(input("Please type in a year:"))
+
+print(f"The next leap year after {year} is {???}")
 
 """
 Please write a program which keeps asking the user for words. 

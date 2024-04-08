@@ -17,7 +17,14 @@ Examples:
 
 """
 # Write your solution here
-
+#input1 = int(input("Please type in the first number: "))
+#input2 = int(input("Please type in the second number: "))
+#if input1 == input2:
+#    print(" The numbers are equal!")
+#elif input1 > input2:
+#    print(f"The greater number was {input1}")
+#else:
+#    print (f"The greater number was {input2}")
 """
 Python comparison operators can also be used on strings. 
 String a is smaller than string b if it comes alphabetically before b. Notice however that the comparison is only reliable if
@@ -43,6 +50,14 @@ You gave the same word twice.
 
 """
 # Write your solution here
+#word1 = input("Please type in the 1st word: ")
+#word2 = input("Please type in the 2nd word: ")
+#if word1 < word2:
+#    print(f"The word that comes alphabetically last is: {word2}")
+#elif word1 > word2:
+#    print (f"The word that comes alphabetically last is: {word1}")
+#else:
+#    print("You gave the same word twice.")
 
 """
 Write a program which asks for the user's name. 
@@ -60,7 +75,22 @@ Examples:
     You're not a nephew of any character I know of.
 """
 # Write your solution here
+#username = input("What is your user‘s name? ")
+#if username in ["Huey", "Dewey", "Louie"]:
+#    print("I think you might be one of Donald Duck's nephews.")
+#elif username in ["Morty", "Ferdie"]:
+#    print("I think you might be one of Mickey Mouse's nephews.")
+#else:
+#    print("You're not a nephew of any character I know of.")
 
+#Solution2:
+#username = input("What is your user‘s name? ")
+#if username == "Huey" or "Dewey" or "Louie":
+#    print("I think you might be one of Donald Duck's nephews.")
+#elif username == "Morty" or "Ferdie":
+#    print("I think you might be one of Mickey Mouse's nephews.")
+#else:
+#    print("You're not a nephew of any character I know of.")
 """
 FizzBuzz
 Write a program which asks the user for an integer number. 
@@ -81,8 +111,17 @@ Examples:
     FizzBuzz
 """
 # Write your solution here
-
-
+#number = int(input("Please type in an integer number: "))
+#if (number % 3 == 0) and (number % 5 == 0):
+#    print("FizzBuzz")
+#elif number % 3 == 0:
+#    print("Fizz")
+#elif number % 5 == 0:
+#    print("Buzz")
+#else:
+#    print("The number given ist‘t dividable by 3 and/or 5.")
+#The % operator is key here; it returns the remainder of the division of
+# the number by 3 or 5. If the remainder is 0, it means the number is divisible by that divisor.
 """
 LeapYear
 Generally, any year that is divisible by four is a leap year. 
@@ -101,4 +140,10 @@ Examples:
     That year is not a leap year.
 """
 # Write your solution here
-
+year = int(input("Please type in a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("That year is a leap year.")
+else:
+   print("That is not a leap year.")
+#If the year is divisible by 4 but not by 100, it is a leap year.
+#If the year is divisible by 100, it must also be divisible by 400 to be a leap year.

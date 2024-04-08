@@ -46,7 +46,6 @@ print(f"Is the number {number} odd? {is_odd}")
 # 321
 n1 = 123
 
-
 print(n1//100)
 print(n1%10)
 print(n1//10%10)
