@@ -25,10 +25,10 @@ How it works:
     followed by whatever is stored in the variable row. Then two stars are added 
     to the end of the variable row, and the value of the variable n is decreased by 1.
 """
-# n = 10 # number of layers in the pyramid
-# row = "*"
+#n = 10 # number of layers in the pyramid
+#row = "*"
 #
-# while n > 0:
+#while n > 0:
 #     print(" " * n + row)
 #     row += "**"
 #     n -= 1
@@ -43,9 +43,9 @@ For example, len("hey") returns 3, because there are three characters in the str
 The following program asks the user for a string and then prints it "underlined". 
 The program prints a second line with as many - characters as is the length of the input:
 """
-# input_string = input("Please type in a string: ")
-# print(input_string)
-# print("-"*len(input_string))
+#input_string = input("Please type in a string: ")
+#print(input_string)
+#print("-"*len(input_string))
 
 
 """
@@ -79,20 +79,20 @@ The following program prints out the first and the last characters of a string:
 """
 The following program loops through all the characters in a string from first to last:
 """
-# input_string = input("Please type in a string: ")
-# index = 0
-# while index < len(input_string):
-#     print(input_string[index])
-#     index += 1
+#input_string = input("Please type in a string: ")
+#index = 0
+#while index < len(input_string):
+#    print(input_string[index])
+#    index += 1
 
 """
 You can also use negative indexing to access characters counting from the end of the string. 
 The last character in a string is at index -1, the second to last character is at index -2, and so forth. 
 You can think of input_string[-1] as shorthand for input_string[len(input_string) - 1].
 """
-# input_string = input("Please type in a string: ")
-# print("First character: " + input_string[0])
-# print("Last character: " + input_string[-1])
+#input_string = input("Please type in a string: ")
+#print("First character: " + input_string[0])
+#print("Last character: " + input_string[-1])
 
 """
 IndexError: string index out of range
@@ -101,8 +101,8 @@ If you tried the above examples for yourself, you may already have come across t
 IndexError: string index out of range. 
 This error appears if you try to access an index which is not present in the string.
 """
-# input_string = input("Please type in a string: ")
-# print("The tenth character: " + input_string[9])    # throws an error if input_string has less than 10 characters
+#input_string = input("Please type in a string: ")
+#print("The tenth character: " + input_string[9])    # throws an error if input_string has less than 10 characters
 
 
 """
@@ -157,14 +157,14 @@ For example, this bit of code
 """
 The program below lets the user search for substrings within a string hardcoded into the program:
 """
-# input_string = "perpendicular"
+#input_string = "perpendicular"
 #
-# while True:
-#     substring = input("What are you looking for? ")
-#     if substring in input_string:
-#         print("Found it")
-#     else:
-#         print("Not found")
+#while True:
+#    substring = input("What are you looking for? ")
+#    if substring in input_string:
+#        print("Found it")
+#    else:
+#        print("Not found")
 #
 
 """
@@ -186,15 +186,15 @@ the first index where it is found, or -1 if the substring is not found within th
 The above substring search example implemented with find:
 """
 
-# input_string = "perpendicular"
+#input_string = "perpendicular"
 #
-# while True:
-#     substring = input("What are you looking for? ")
-#     index = input_string.find(substring)
-#     if index >= 0:
-#         print(f"Found it at the index {index}")
-#     else:
-#         print("Not found")
+#while True:
+#    substring = input("What are you looking for? ")
+#    index = input_string.find(substring)
+#    if index >= 0:
+#        print(f"Found it at the index {index}")
+#    else:
+#        print("Not found")
 
 """
 Above we used the string method find. 

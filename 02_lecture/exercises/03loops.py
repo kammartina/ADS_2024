@@ -75,15 +75,15 @@ Hint: you can use the debugger of PyCharm to see how the program is executing.
 #print("Now!")
 ###
 
-print("Countdown!")
+#print("Countdown!")
 # Initialize the number before the loop
-number = 5
+#number = 5
 # Include 0 in the countdown
-while number >= 0:
-  print(number)
+#while number >= 0:
+#  print(number)
   # Decrement the number by 1
-  number -= 1
-print("Now!")
+#  number -= 1
+#print("Now!")
 
 """
 Write a program which asks the user for a year, and prints out the next leap year.
@@ -97,9 +97,9 @@ Examples:
     The next leap year after 2024 is 2028
 """
 # Write your solution here
-year = int(input("Please type in a year:"))
+#year = int(input("Please type in a year:"))
 
-print(f"The next leap year after {year} is {???}")
+#print(f"The next leap year after {year} is {???}")
 
 """
 Please write a program which keeps asking the user for words. 
@@ -195,6 +195,8 @@ Example:
   ***********
 """
 # Write your solution here
+rows = 6
+
 
 """
 Write a program to calculate the average grade. The console reads in grades between 1 and 5 
@@ -214,3 +216,84 @@ Example:
   Negative marks: 2
 """
 # Write your solution here
+
+
+"""
+Assignment Group B:
+"""
+#TASK 02
+#Write a program that repeatedly asks users to enter three numbers (integer) and outputs whether
+#the numbers entered are in ascending order, descending order, or in neither.
+
+#The program then prints "ascending", "descending" or "no specific order".
+
+#Additionally, if the entered numbers are not ordered ascending or descending, it checks if all
+#numbers are even (divisible by 2) or odd.
+
+#n1 = int(input("The first number is: "))
+#n2 = int(input("The second number is: "))
+#n3 = int(input("The third number is: "))
+
+#if n1 < n2 < n3:
+#  print("The numbers are in ascending order.")
+#elif n1 > n2 > n3:
+#  print("The numbers are in descending order.")
+#else:
+#   print("The numbers are in no specific order.")
+#   if n1 % 2 == 0 and n2 % 2 == 0 and n3 % 2 == 0:
+#     print("The numbers are even.")
+#   elif n1 % 2 != 0 and n2 % 2 != 0 and n3 % 2 != 0:
+#     print("The numbers are odd.")
+#   else:
+#     print("The numbers may be even or odd.")
+
+""""""
+#TASK 01
+#Write a program that reads in two integers n1 and n2 from the user and outputs the sum of all
+#integers from n1 to n2 (inclusively).
+#If n1 or n2 (or both) are smaller or equal to 0, the program should print a corresponding message. If
+#both numbers are greater than 0, but n2 is less than n1, an error message should also be printed.
+
+#start = int(input("The first number is: "))
+#end = int(input("Put in a higher number: "))
+#if start > end:
+#  print("The second number needs to be higher than the first number.")
+#else:
+#  if start <= 0 or end <= 0:
+#    print("Either number can‘t be negative.")
+#  else:
+#    sum = [i for i in range(start, end)] #list function
+#    print(sum)
+
+"""
+Assignment Group A
+"""
+#Task 01 – Cashbox
+#Write a program that reads in an amount to be paid (int) and an amount received (int) from user.
+#The program calculates the change, prints it, and terminates.
+#If the amount received is too small, a corresponding error message is printed, and the user input is
+#repeated.
+#If the amount to be paid and/or the amount received is less than 0, the input is incorrect. In that
+#case, the program should also print a message and repeat the user input.
+
+to_be_paid = int(input("To pay: "))
+amount_received = int(input("Received: "))
+change = to_be_paid - amount_received
+
+while True:
+  if amount_received < 0:
+    print("Negative payment is invalid!")
+    to_be_paid = int(input("To pay: "))
+    amount_received = int(input("Received: "))
+  else:
+    if change == 0:
+      print("Thank you!")
+      break
+    elif amount_received > to_be_paid:
+      print(f"Thank you! Your change is: {amount_received - to_be_paid}")
+      break
+    elif amount_received < to_be_paid:
+      print("You did not pay enough. Please, pay more.")
+      to_be_paid = int(input("To pay: "))
+      amount_received = int(input("Received: "))
+
