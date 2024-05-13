@@ -60,7 +60,7 @@ for i in range(3, 7):
 
 """
 Finally, with a third argument you can also specify the size of the step the range takes between each value. 
-The function call range(a, b, c) provides a range starting from a, ending at b-1, and changing by c with every step:
+The function call range(a, b, c) provides a range starting from a, ending at b 1, and changing by c with every step:
 """
 for i in range(1, 9, 2):
     print(i, end="") # prints 1357

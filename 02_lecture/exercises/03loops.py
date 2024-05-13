@@ -14,12 +14,12 @@ Example:
     okay then
 """
 # Write your solution here
-#print("Hello world!")
-#while True:
-#  user_input = input("Shall we continue? ")
-#  if user_input == "no":
-#    print("Okay then, bye!")
-#    break
+print("Hello world!")
+while True:
+ user_input = input("Shall we continue? ")
+ if user_input == "no":
+   print("Okay then, bye!")
+   break
 
 """
 Write a program which asks the user for integer numbers.
@@ -47,17 +47,29 @@ Example:
     Exiting...
 """
 # Write your solution here
-#from math import sqrt
-#print(sqrt(9))
-#while True:
-#  number = int(input("Please type in a number: "))
-#  if number < 0:
-#    print("Invalid number!")
-#  elif number > 0:
-#    square_root = math.sqrt(number)
-#    print(f"The square root of {number} is {square_root}")
-#  else:
-#    break
+from math import sqrt
+while True:
+  user_input = int(input("Please type in a number: "))
+  if user_input == 0:
+    print("Exiting...")
+    break
+  elif user_input < 0:
+    print("invalid number")
+  else:
+    print(sqrt(user_input))
+
+#Solution2:
+import math
+while True:
+ number = int(input("Please type in a number: "))
+ if number < 0:
+   print("Invalid number!")
+ elif number > 0:
+   square_root = math.sqrt(number)
+   print(f"The square root of {number} is {square_root}")
+ else:
+   print("Exiting...")
+   break
 """
 This program should print out a countdown. However, the program doesn't quite work. Please fix it.
 Hint: you can use the debugger of PyCharm to see how the program is executing.
@@ -65,25 +77,26 @@ Hint: you can use the debugger of PyCharm to see how the program is executing.
 # Fix the code
 #number = 5
 #print("Countdown!")
+#
 #while True:
-#  print(number)
-#  number = number - 1
-#  continue
 #  if number > 0:
+#    print(number)
+#    number = number - 1
+#    continue
+#  else:
 #    break
-
+#
 #print("Now!")
 ###
 
-#print("Countdown!")
-# Initialize the number before the loop
-#number = 5
-# Include 0 in the countdown
-#while number >= 0:
-#  print(number)
-  # Decrement the number by 1
-#  number -= 1
-#print("Now!")
+print("Countdown!")
+Initialize the number before the loop
+number = 5
+while number > 0:
+ print(number)
+  Decrement the number by 1
+ number -= 1
+print("Now!")
 
 """
 Write a program which asks the user for a year, and prints out the next leap year.
@@ -97,9 +110,15 @@ Examples:
     The next leap year after 2024 is 2028
 """
 # Write your solution here
-#year = int(input("Please type in a year:"))
+year = int(input("Year: "))
 
-#print(f"The next leap year after {year} is {???}")
+while True:
+   year += 1
+   if year % 4 == 0:
+       #after the word "after" is not the year that the user entered, but the last leap year that we had and
+       #and the next leap year will be calculated
+       print(f"The next leap year after {year - 4} is {year}")
+       break
 
 """
 Please write a program which keeps asking the user for words. 
@@ -119,10 +138,41 @@ Example:
 """
 # Write your solution here
 
+#Initializes the "story" variable with a single space. This will be used to accumulate the words entered by the user.
+#meaning: to accumulate, or add together, the words entered by the user with spaces in between
+story = " "
+#Starts an infinite loop. This loop will continue to run until it’s explicitly broken out of with the break statement.
+while True:
+ word = input("Please type in a word ("end" for exit): ")
+ if word == "end":
+   break
+ story += word + " "
+print(story)
+
+# EXPLANATION: story += word + " "
+#   "story" is the variable that holds the accumulated story so far.
+#   "+=" is the in-place addition operator. It adds the right-hand side to the left-hand side and then assigns the
+#     result back to the left-hand side. In the context of strings, it concatenates them.
+#   "word" is the variable that holds the most recent word entered by the user.
+#   " " This is a single space character as a string. It’s added after word to ensure that words are separated by spaces
+#     in the story.
+
 """
 Change the program above so that the loop ends also if the user types in the same word twice in a row.
 """
 # Write your solution here
+
+story = " "
+#initialize last_word as an empty string (""), which will keep track of the last word entered
+last_word = ""
+while True:
+  word = input("Please type in a word ("end" for exit): ")
+  if word == "end" or word == last_word:
+    break
+  story += word + " "
+  #we update last_word with the current word
+  last_word = word
+print(story)
 
 """
 Please write a program which asks the user for integer numbers. 
@@ -141,7 +191,34 @@ Example output
   Positive numbers 3
   Negative numbers 1
 """
-# Write your solution here
+# Write your solution here:
+
+# Initialize variables
+total_sum = 0
+count_numbers = 0
+count_positive = 0
+count_negative = 0
+
+while True:
+  user_input = int(input("Please type in a number (0 for exit): "))
+  if user_input == 0:
+    break
+  total_sum += user_input
+  count_numbers += 1
+  if user_input > 0:
+    count_positive += 1
+  elif user_input < 0:
+    count_negative += 1
+
+#dividing total_sum by count_numbers, but only if at least one number was entered (to avoid division by zero)
+#meaning: total_sum divided by count_numbers, ale iba ak sa count_numbers nerovna nule, lebo inak bude vysledok tohto celeho nula
+mean = total_sum // count_numbers if count_numbers != 0 else 0
+
+print(f"The numbers typed in: {count_numbers}")
+print(f"The sum of the number is {total_sum}")
+print(f"The mean of the numbers is: {mean}")
+print(f"Positive numbers: {count_positive}")
+print(f"Negative numbers: {count_negative}")
 
 """
 Largest Number
@@ -165,6 +242,29 @@ Examples:
   No number entered.
 """
 # Write your solution here
+counter = 0
+#largest_number is set to -1, which acts as a FLAG VALUE indicating that NO NUMBERS HAVE BEEN ENTERED YET
+largest_number = -1
+
+while True:
+  user_input = float(input(f"Number {counter} (0 for exit): "))
+  if counter == 1 and user_input <= 0:
+    print("no number entered")
+    break
+
+  if user_input == 0:
+    break
+
+  #For each positive number entered, the program checks if it’s larger than the current largest_number.
+  #If it is, largest_number is updated to this new value.
+  if user_input > largest_number or largest_number == -1:
+    largest_number = user_input
+
+  counter += 1
+
+# If a largest number has been found, print it
+if largest_number != -1:
+  print(f"The largest number is: {largest_number}")
 
 """
 Write a program that reads in an integer number (number of lines) and generates the subsequent output using 
@@ -182,6 +282,30 @@ Examples:
   Invalid number!
 """
 # Write your solution here
+n = int(input("n: >> "))
+if n <= 0:
+  print("Invalid number!")
+else:
+  #We initialize two more variables: "num" (to keep track of the current number)
+  # and "line" (to keep track of the current line).
+  num = 1
+  line = 1
+  #We use a while loop to iterate through each line. The loop continues until line is less than or equal to n.
+  while line <= n:
+    #Inside the outer loop, we use another while loop to print the numbers in each line.
+    #The inner loop continues until count is less than line.
+    count = 0
+    while count < line:
+      #We print the current value of num.
+      #Increment num by 1.
+      #Increment count by 1.
+      print(num, end=' ')
+      num += 1
+      count += 1
+    # New line after each row
+    print()
+    #we increment line by 1 to move to the next line and repeat the process until all lines are printed
+    line += 1
 
 """
 Write a program that uses loops to create a pyramid of stars '*' on the console. 
@@ -195,8 +319,12 @@ Example:
   ***********
 """
 # Write your solution here
-rows = 6
-
+n = 6
+row = "*"
+while n > 0:
+  print(" " * n + row)
+  row += "**"
+  n -= 1
 
 """
 Write a program to calculate the average grade. The console reads in grades between 1 and 5 
@@ -216,7 +344,28 @@ Example:
   Negative marks: 2
 """
 # Write your solution here
+counter = 1
+total_sum = 0
+count_numbers = 0
+count_negative = 0
 
+while counter <= 5:
+  user_input = int(input(f"Mark {counter}: "))
+  if user_input < 0 or user_input > 5:
+    print("Invalid mark!")
+    continue
+  else:
+    total_sum += user_input
+    count_numbers += 1
+
+  if user_input == 5:
+    count_negative += 1
+
+  counter += 1
+
+average = total_sum // count_numbers
+print(f"Average: {average}")
+print(f"Negative marks: {count_negative}")
 
 """
 Assignment Group B:
@@ -268,32 +417,52 @@ Assignment Group B:
 """
 Assignment Group A
 """
+"""
 #Task 01 – Cashbox
-#Write a program that reads in an amount to be paid (int) and an amount received (int) from user.
-#The program calculates the change, prints it, and terminates.
-#If the amount received is too small, a corresponding error message is printed, and the user input is
-#repeated.
-#If the amount to be paid and/or the amount received is less than 0, the input is incorrect. In that
-#case, the program should also print a message and repeat the user input.
+Write a program that reads in an amount to be paid (int) and an amount received (int) from user.
+The program calculates the change, prints it, and terminates.
+If the amount received is too small, a corresponding error message is printed, and the user input is
+repeated.
+If the amount to be paid and/or the amount received is less than 0, the input is incorrect. In that
+case, the program should also print a message and repeat the user input.
+"""
 
 to_be_paid = int(input("To pay: "))
 amount_received = int(input("Received: "))
 change = to_be_paid - amount_received
 
 while True:
-  if amount_received < 0:
-    print("Negative payment is invalid!")
-    to_be_paid = int(input("To pay: "))
-    amount_received = int(input("Received: "))
-  else:
-    if change == 0:
-      print("Thank you!")
-      break
-    elif amount_received > to_be_paid:
-      print(f"Thank you! Your change is: {amount_received - to_be_paid}")
-      break
-    elif amount_received < to_be_paid:
-      print("You did not pay enough. Please, pay more.")
-      to_be_paid = int(input("To pay: "))
-      amount_received = int(input("Received: "))
+ if amount_received < 0:
+   print("Negative payment is invalid!")
+   to_be_paid = int(input("To pay: "))
+   amount_received = int(input("Received: "))
+ else:
+   if change == 0:
+     print("Thank you!")
+     break
+   elif amount_received > to_be_paid:
+     print(f"Thank you! Your change is: {amount_received - to_be_paid}")
+     break
+   elif amount_received < to_be_paid:
+     print("You did not pay enough. Please, pay more.")
+     to_be_paid = int(input("To pay: "))
+     amount_received = int(input("Received: "))
 
+
+
+"""
+Excercises Loops (YouTube)
+"""
+#Write a program to display the even number between 1 and 10. After that print the messege
+#how many even numbers were printed.
+
+#to count the numbers we need a separate variable
+count = 0
+
+for number in range(1, 10):
+ if number % 2 == 0:
+   #every time we find an even number we need to increment
+   count += 1
+   print(number)
+
+print(f"We have {count} even numbers.")

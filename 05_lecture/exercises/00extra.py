@@ -15,6 +15,19 @@ Example Output:
 """
 
 # Write your solution here
+# original_list = []
+# for i in range(1,21):
+#     original_list.append(i)
+# print(f"Original list: {original_list}")
+
+original_list = list(range(1, 21))
+print(f"Original list: {original_list}")
+
+filtered_list = []
+for i in range(1,21):
+    if i % 2 == 0:
+        filtered_list.append(i)
+print(f"Filtered list: {filtered_list}")
 
 """
 ### Exercise 2: Todo List Application ###
@@ -42,6 +55,21 @@ Example Interaction:
 """
 
 # Write your solution here
+todos = []
+while True:
+    user_input = input("Please enter a task or command: ")
+    if user_input == "done":
+        break
+    elif user_input == "remove":
+        todos.pop(-1)
+        print("Last task removed.")
+        continue
+    elif user_input == "view":
+        print("Final tasks:", todos)
+    else:
+        todos.append(user_input)
+        continue
+print("Current tasks: ", todos)
 
 """
 ### Exercise 3: Analyzing Numbers ###
@@ -69,3 +97,33 @@ If you want, you can research "dictionaries" in Python and structure your soluti
 """
 
 # Write your solution here
+def analyzing_numbers(numbers):
+    greatest = max(numbers)
+    smallest = min(numbers)
+    average = sum(numbers) / len(numbers)
+    # LIST COMPREHENSION is used to create a new list that contains only the numbers that are less than the average
+    under_avg = [num for num in numbers if num < average]
+    return {'max': greatest, 'min': smallest, 'average': average, 'under_avg': under_avg}
+
+#my_list = int(input("Input numbers: ")) ???????
+my_list = [2,5,4,7]
+print(f"Output: {analyzing_numbers(my_list)}")
+
+
+# COPILOT:
+# def calculate_stats(numbers):
+#     max_value = max(numbers)
+#     min_value = min(numbers)
+#     average = sum(numbers) / len(numbers)
+#     under_avg = [num for num in numbers if num < average]
+#
+#     return {'max': max_value, 'min': min_value, 'average': average, 'under_avg': under_avg}
+#
+# # Initialize the list with numbers
+# numbers = [1, 2, 3]  # Example input
+#
+# # Get the statistics
+# stats = calculate_stats(numbers)
+#
+# # Print the statistics
+# print(stats)

@@ -1,4 +1,77 @@
 """
+MULTIPLYING STRINGS
+"""
+n = 5
+row = "*"
+while n > 0:
+    print(" " * n + row)
+    row += "**"
+    n -= 1
+"""
+IN-operator #results in Boolean value
+
+FIND method
+my_string.find("xem")
+
+"""
+"""
+FOR-loop
+
+name = "LEON"
+for character in name:
+    print(character)
+
+# L
+# E
+# O
+# N
+
+#FOR every CHARACTER in the string NAME
+#PRINT the CHARACTER to the console
+
+"""
+RANGE function
+-> to iterate through a string using its indices
+-> returns a sequence of numbers from start (first parameter) to stop (second parameter)
+
+alphabet = "ABCDEF..."
+for index in range(0,len(alphabet)):
+    print(alphabet[index])
+
+# A
+# B
+# C
+# D
+# E
+# F
+# .
+# .
+# .<
+
+"""
+STRING METHODS
+
+str.capitalize() => first character capitalized, others in lowercase
+capitalized = my_string.capitalize()
+
+str.lower() => any characters in uppercase to lowercase -> all in lowercase
+lowered = my_string.lower()
+
+str. upper() => any characters in lowercase to uppercase -> all in uppercase
+upper_case = my_string.upper()
+
+str.replace(old, new [count]) => "old" replaced by "new"; if the count argument is given, all count number of occurences are replaced
+replaced = my_string.replace("hello", "hi")
+
+str.strip() => removes leading and trailing whitespace from a string
+stripped = my_string.strip()
+
+split(separator) => splits a string into a list of substrings based on a specified separator
+splitted = my_string.split(", ")
+
+"""
+
+"""
 Write a program which asks the user for a string and an amount.
 The program then prints out the string as many times as specified by the amount.
 The printout should all be on one line, with no extra spaces or symbols added.
@@ -9,10 +82,10 @@ Example:
     heyheyheyhey
 """
 # Write your solution here
-#my_string = input("Please type in a string: ")
-#my_amount = input("Please type in an amount: ")
-#multiprint = str(my_string) * int(my_amount)
-#print(multiprint)
+my_string = input("Please type in a string: ")
+my_amount = input("Please type in an amount: ")
+multiprint = str(my_string) * int(my_amount)
+print(multiprint)
 
 """
 Write a program which asks the user for two strings and then prints out whichever is the longer of the two - 
@@ -30,15 +103,17 @@ Examples:
     world is longer
 """
 # Write your solution here
-#my_string1 = input("Please type in string 1: ")
-#my_string2 = input("Please type in string 2: ")
-#
-#if len(my_string1) > len(my_string2):
-#    print(f"The longer string is: {my_string1}")
-#elif len(my_string1) < len(my_string2):
-#    print(f"The longer string is: {my_string2}")
-#else:
-#    print("The strings are equally long.")
+
+my_string1 = input("Please type in string 1: ")
+my_string2 = input("Please type in string 2: ")
+
+if len(my_string1) > len(my_string2):
+   print(f"The longer string is: {my_string1}")
+elif len(my_string1) < len(my_string2):
+   print(f"The longer string is: {my_string2}")
+else:
+   print("The strings are equally long.")
+
 """
 Write a program which asks the user for a string. The program then prints out the input string in reversed order, 
 from end to beginning. Each character should be on a separate line.
@@ -46,26 +121,43 @@ Try to solve this example in 2 ways:
     * once using positive indeces
     * once using negative indeces
 """
-# Write your solution for positive indices here
-#???????
-#my_string = input("Please type in a string: ")
-#reversed_string = ""
-#
-#for i in range(len(my_string)):
-#    reversed_string = my_string[i] + reversed_string
-#
-#for char in reversed_string:
-#    print(char)
+# # String in normal order using positive indices:
+my_string = input("Please type in a string: ")
+for character in my_string:
+    print(character)
 
-#the for-loop meaning - for every character in the string my_string print the character to the console
 
-# Write your solution for negative indices here
-#we don‘t need reversing because it is already reversed
-#my_string = input("Please type in a string: ")
-#length = len(my_string)
-#
-#for i in range(-1, -length-1, -1):
-#    print(my_string[i])
+# # REVERSED using POSITIVE indices:
+my_string = input("Please type in a string: ")
+length = len(my_string)
+# using positive indices, so index starts with 0
+i = 0
+#the FOR-loop meaning - for every character in the string my_string print the character to the console
+# Use a for loop with positive indices to print each character in reverse order
+#Inside the loop, length - 1 - i is used to calculate the index of the character to be printed. Since i starts
+# at 0 and increases, length - 1 - i starts at length - 1 (the last character’s index) and decreases to 0 (the
+# first character’s index).
+for i in range (length):
+    print(my_string[length -1 - i])
+
+
+# # String in normal order using negative indices ??:
+# my_string = input("Please type in a string: ")
+# i = -1
+# for character in my_string:
+#     print(character)
+
+
+# # REVERSED using NEGATIVE indices:
+my_string = input("Please type in a string: ")
+# using negative indices, so index starts with -1
+# we don‘t need reversing because it‘s already reversed
+i = -1
+length = len(my_string)
+#The loop runs from -1 (the last character’s index) to -length (the first character’s index), stepping backwards by 1.
+for i in range (-1, -length -1, -1):
+    #my_string[i] accesses each character of the string using the negative index i
+    print(my_string[i])
 
 """
 Write a program which asks the user for a string. 
@@ -80,12 +172,13 @@ Examples:
     The second and the second to last characters are a
 """
 # Write your solution here
-#my_string = input("Please type in a string: ")
 
-#if my_string[1] != my_string [-2]:
-#    print("The second and the second to last characters are different.")
-#else:
-#    print(f"The second and the second to last characters are {my_string [1]}")
+my_string = input("Please type in a string: ")
+
+if my_string[1] != my_string [-2]:
+   print("The second and the second to last characters are different.")
+else:
+   print(f"The second and the second to last characters are {my_string [1]}")
 
 """
 Write a program which prints out a line of hash characters, the width of which is chosen by the user.
@@ -98,9 +191,10 @@ Examples:
     ##
 """
 # Write your solution here
-#my_width = int(input("Width: "))
-#multiplication = str("#") * int(my_width)
-#print(multiplication)
+
+my_width = int(input("Width: "))
+multiplication = str("#") * int(my_width)
+print(multiplication)
 
 """
 Modify the previous program so that it also asks for the height, and prints out a rectangle of hash characters accordingly.
@@ -113,12 +207,13 @@ Example:
     ##########
 """
 # Write your solution here
-#???????
-#my_width = int(input("Width: "))
-#my_height = int(input("Heigh: "))
-#
-#for _ in range(my_height):
-#    print("#" * my_width)
+my_width = int(input("Width: "))
+my_height = int(input("Heigh: "))
+
+for _ in range(my_height):
+   print("#" * my_width)
+
+#The underscore (_) is used as a THROWAWAY VARIABLE NAME, indicating that ITS VALUE IS NOT USED IN THE LOOP.
 
 """
 Write a program which asks the user for a string and then prints it out so that exactly 20 characters are displayed. 
@@ -134,16 +229,16 @@ Examples:
     **********helloworld 
 """
 # Write your solution here
-#my_string = input("Please type in a string (max. 20 characters): ")
-#
-#if len(my_string) == 20:
-#    print(my_string)
-#elif len(my_string) > 20:
-#    print(my_string[0:20])
-#else:
-#    asterisk_needed = 20 - len(my_string)
-#    padding = "*" * asterisk_needed
-#    print(padding + my_string)
+my_string = input("Please type in a string (max. 20 characters): ")
+
+if len(my_string) == 20:
+   print(my_string)
+elif len(my_string) > 20:
+   print(my_string[0:20])
+else:
+   asterisk_needed = 20 - len(my_string)
+   padding = "*" * asterisk_needed
+   print(padding + my_string)
 
 #OidaOidaOidaOidaOidaO
 
@@ -201,17 +296,27 @@ Example:
     test
 """
 # Write your solution here
-#my_string = input("Please type in a string: ")
-## Iterate over the input string
-#for i in range (0, len(my_string)):
-#    # Print substrings starting from the first character
-#    print(my_string[:i + 1])
+my_string = input("Please type in a string: ")
+# Iterate over the input string
+for i in range (0, len(my_string)):
+   # Print substrings starting from the first character
+   print(my_string[:i + 1])
 
 #Solution which starts with every letter from my_string and adds letters...
-#my_string = input("Please type in a string: ")
-#for i in range (0, len(my_string)):
+# my_string = input("Please type in a string: ")
+# for i in range (0, len(my_string)):
 #    for j in range (i + 1, len(my_string) + 1):
 #        print(my_string[i:j])
+#Output:
+# t
+# te
+# tes
+# test
+# e
+# es
+# est
+# s
+# st
 
 """
 Write a program which asks the user to type in a string. 
@@ -225,13 +330,33 @@ Example:
     est
     test
 """
-#??????
-# Write your solution here
-#my_string = input("Please type in a string: ")
-#
-#for i in range (0, len(my_string)):
+# Write your solution here (using negative indices)
+my_string = input("Please type in a string: ")
+i = -1
+# The loop runs from -1 (the last character’s index) to -length (the first character’s index), stepping backwards by 1.
+# MEANING:
+#t[-1],e[-2],s[-3],t[-4]
+#zaciatok je na pozicii -1; -len(my_string) znamena ze pokracujeme az na zaciatok slova;
+#-len(my_string) -1 znamena ze na konci slova este o jeden index dalej aby sa vytlacilo aj cele slovo
+#posledna -1 znamena ze for loop ma ist stale o jednu poziciu dalej (v tomto pripade uberat o jednu poziciu)
+for i in range (-1, -len(my_string) -1, -1):
+   # Print substrings starting from the first character do konca slova; v zapornych cislach!
+   print(my_string[i:])
+
+
+
+# # Solution with POSITIVE indices:
+# my_string = input("Please type in a string: ")
+# for i in range (0, len(my_string)):
 #    # Print substrings starting from the first character
 #    print(my_string[i:])
+
+# Output:
+# test
+# est
+# st
+# t
+
 """
 Write a program which asks the user to input a string. The program then prints out different messages if the string 
 contains any of the vowels a, e or o.
@@ -249,22 +374,22 @@ You may assume the input will be in lowercase entirely. Have a look at the examp
     o not found
 """
 # Write your solution here
-#my_string = input("Please type in a string: ")
-#
-#if "a" in my_string:
-#    print("a found")
-#else:
-#    print("a not found")
-#
-#if "e" in my_string:
-#    print("e found")
-#else:
-#    print("e not found")
-#
-#if "o" in my_string:
-#    print("o found")
-#else:
-#    print("o not found")
+my_string = input("Please type in a string: ")
+
+if "a" in my_string:
+   print("a found")
+else:
+   print("a not found")
+
+if "e" in my_string:
+   print("e found")
+else:
+   print("e not found")
+
+if "o" in my_string:
+   print("o found")
+else:
+   print("o not found")
 
 """
 Write a program which asks the user to type in a string and a single character. The program then 
@@ -290,18 +415,17 @@ Examples:
     Please type in a character: >> n
 """
 # Write your solution here
-#my_string1 = input("Please type in a string: ")
-#my_string2 = input("Please type in a single character: ")
-#
-## Find the first occurrence of the character + definujem index
-#index = my_string1.find(my_string2)
-## Check if there are at least two characters after the found character
-#if index != -1 and index + 2 < len(my_string1):
-#    # Print the three character slice
-#    print(my_string1[index:index+3])
-#else:
-#    print("")
+my_string1 = input("Please type in a string: ")
+my_string2 = input("Please type in a single character: ")
 
+# Find the first occurrence of the character + definujem index
+index = my_string1.find(my_string2)
+# Check if there are at least two characters after the found character
+if index != -1 and index + 2 < len(my_string1):
+   # Print the three character slice
+   print(my_string1[index:index+3])
+else:
+   print("")
 
 """
 Write a program which finds the second occurrence of a substring. If there is no second (or first) occurrence, 
@@ -336,7 +460,7 @@ first_index = my_string.find(my_substring)
 if first_index != -1:
     #then initialize the index for the second occurrence and , look for the second occurrence
     second_index = my_string.find(my_substring, first_index + len(my_substring))
-    #druhy index sa zacina od najdenia prveho indexu kdekolvek do konca slova
+    #->druhy index sa zacina od najdenia prveho indexu kdekolvek do konca slova
     #If the second occurrence is found...
     if second_index != -1:
         print(f"The second occurrence of the substring is at index {second_index}")
